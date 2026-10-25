@@ -338,6 +338,16 @@
                     android:text="@string/wifi"
                     android:drawableStart="@drawable/ic_wifi"
                     android:nextFocusDown="@+id/grid" />
+               
+                <TextView
+                    android:id="@+id/btnBluetooth"
+                    style="@style/TopButton"
+                    android:maxWidth="180dp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:text="Bluetooth"
+                    android:nextFocusDown="@+id/grid" />
+                
 
                 <TextView
                     android:id="@+id/btnReorder"
