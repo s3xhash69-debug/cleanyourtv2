@@ -465,12 +465,6 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
             });
         }
         btnWifi = findViewById(R.id.btnWifi);
-        findViewById(R.id.btnBluetooth).setOnClickListener(new android.view.View.OnClickListener() {
-    @Override
-    public void onClick(android.view.View v) {
-        startActivity(new android.content.Intent(android.provider.Settings.ACTION_BLUETOOTH_SETTINGS));
-    }
-});
         shamsiDate = findViewById(R.id.shamsiDate);
         stats = findViewById(R.id.stats);
         raceCalendar = cfg.raceCalendar;
