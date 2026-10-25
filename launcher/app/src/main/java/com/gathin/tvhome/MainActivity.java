@@ -680,7 +680,19 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
 
         btnInputs = findViewById(R.id.btnInputs);
         View btnSettings = findViewById(R.id.btnSettings);
-        btnInputs.setOnClickListener(v -> showInputs());
+        btnInputs.setOnClickListener(v -> {
+    try {
+        // Triggers the native Live TV deep link (mimicking the remote)
+        android.content.Intent liveTvIntent = new android.content.Intent(android.content.Intent.ACTION_VIEW, android.net.Uri.parse("content://android.media.tv/channel"));
+        startActivity(liveTvIntent);
+    } catch (Exception e) {
+        // Fallback to the Airtel app's main screen
+        android.content.Intent airtelApp = getPackageManager().getLaunchIntentForPackage("tv.accedo.airtel.wynk");
+        if (airtelApp != null) {
+            startActivity(airtelApp);
+        }
+    }
+});
         btnWifi.setOnClickListener(v -> openNetworkPill());
         btnWifi.setOnLongClickListener(v -> {
             open(systemIntent(Settings.ACTION_WIFI_SETTINGS));
