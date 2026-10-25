@@ -702,7 +702,7 @@ public class MainActivity extends Activity implements AppAdapter.TileListener {
         if (launcherSettingsButton) {
             ((TextView) btnSettings).setText(R.string.launcher_settings);
             ((TextView) btnSettings).setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_home_settings_pill, 0, 0, 0);
-        }
+        });
         btnSettings.setOnClickListener(v -> {
           startActivityForResult(new Intent(this, LauncherSettingsActivity.class), REQUEST_SETTINGS);
         });
